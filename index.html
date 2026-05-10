@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Midnight Archive — a digital exhibition. CRT quiet, deep blue, dust-light. Open 01:00–04:00." />
+  <title>Midnight Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-reveal">
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div id="grain" aria-hidden="true"></div>
+  <div id="crt-noise" aria-hidden="true"></div>
+  <div id="crt-scanlines" aria-hidden="true"></div>
+  <div id="archive-vignette" aria-hidden="true"></div>
+
+  <div id="room-enter-fx" class="room-enter-fx" aria-hidden="true">
+    <div class="room-enter-fx__flash"></div>
+    <div class="room-enter-fx__sweep"></div>
+  </div>
+
+  <main>
+    <div class="archive">
+      <section class="view view--entrance" id="view-entrance" aria-label="Entrance">
+        <p class="signal">MA / CRT·DAS · local 02:48 · window 01:00–04:00 · low noise floor</p>
+        <h1>Midnight Archive</h1>
+        <p class="exhibition-guide">This is a midnight archive. Enter slowly.</p>
+        <button type="button" class="entry-link" id="entryBtn" aria-label="Enter the exhibition">ENTRY</button>
+      </section>
+
+      <section class="view view--exhibition is-hidden" id="view-exhibition" aria-label="Exhibition" hidden inert>
+        <button type="button" class="exhibition-foyer" id="foyerBtn">← entrance</button>
+        <p class="exhibition-slug">Digital exhibition · three chapters · CRT / archive</p>
+
+        <nav class="section-nav" role="tablist" aria-label="Exhibition chapters">
+          <button type="button" class="section-tab is-active" role="tab" id="tab-s-1" aria-selected="true" aria-controls="panel-s-1" data-section="1">SECTION I</button>
+          <button type="button" class="section-tab" role="tab" id="tab-s-2" aria-selected="false" aria-controls="panel-s-2" data-section="2">SECTION II</button>
+          <button type="button" class="section-tab" role="tab" id="tab-s-3" aria-selected="false" aria-controls="panel-s-3" data-section="3">SECTION III</button>
+        </nav>
+
+        <div class="section-panels">
+          <article class="section-panel is-active" role="tabpanel" id="panel-s-1" aria-labelledby="tab-s-1" data-section="1" aria-hidden="false" lang="zh-Hans">
+            <p class="section-panel__meta">SECTION I · Signal Room · 记忆信号</p>
+            <h2 class="section-panel__title" lang="en">Signal Room</h2>
+            <p class="section-panel__body">这一格不追求“整理完毕”，更像机柜里缓慢转动的磁带：数字档案记下索引，显像管却坚持用余辉承接那些含混的回声。你以为早已注销的句子，会在无人值守的频段里轻轻抬头，又沉回沙沙的底噪。</p>
+            <p class="section-panel__body">深夜的孤独不是空房间，而是你愿意把耳朵贴向噪声的那份耐心。坐近一点也无妨——系统不会催促，只有扫描线按时掠过，像有人在很远的地方，替你翻过一页不必署名的过去。</p>
+          </article>
+          <article class="section-panel" role="tabpanel" id="panel-s-2" aria-labelledby="tab-s-2" data-section="2" aria-hidden="true" inert lang="zh-Hans">
+            <p class="section-panel__meta">SECTION II · City Archive · 城市碎片</p>
+            <h2 class="section-panel__title" lang="en">City Archive</h2>
+            <p class="section-panel__body">城市在 01:00 以后换了一套语法：霓虹被雨磨软，地铁门关合的余音拖得很长，玻璃里叠着你与街角的重复曝光。这里存的不是地标，而是来不及命名的碎片——风在路口犹豫的弧度，陌生人肩线投下的短暂阴影。</p>
+            <p class="section-panel__body">数字档案把街景切成冷冷的行与列；CRT 却把它们还给你一点体温。你进来，不是为了找路，而是承认自己也漂在这条夜的噪声河里：被带走一些，又留下一些，在微蓝的屏光里慢慢显影。</p>
+          </article>
+          <article class="section-panel" role="tabpanel" id="panel-s-3" aria-labelledby="tab-s-3" data-section="3" aria-hidden="true" inert lang="zh-Hans">
+            <p class="section-panel__meta">SECTION III · Sleep Channel · 夜间意识流</p>
+            <h2 class="section-panel__title" lang="en">Sleep Channel</h2>
+            <p class="section-panel__body">快要睡着时，目录失效，频道却还在自动播放：走廊、旧对话、从未发生的告别，被雨声和磁带卷轴的摩擦揉在一起。数字系统试图排序，余辉却更诚实——它允许画面拖尾，允许句子在半途熄灭。</p>
+            <p class="section-panel__body">这是档案馆里最柔软也最孤独的一层：像把额头抵在微温的壳体上，听电流与梦呓合流。别急着清醒；在这里，沉默也有细小的波纹，一圈圈推开，直到与四点前的深蓝融为一体。</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <button type="button" class="sound-toggle" id="soundToggle" aria-pressed="false" aria-label="Enable ambient sound">ENTER SOUND</button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
